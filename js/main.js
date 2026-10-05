@@ -14,9 +14,11 @@ siteNav.querySelectorAll('a').forEach((link) => {
 });
 
 const form = document.getElementById('contact-form');
-const formNote = document.getElementById('form-note');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  formNote.textContent = 'Thanks for reaching out — this form is a placeholder until email delivery is connected.';
-  form.reset();
-});
+if (form) {
+  const formNote = document.getElementById('form-note');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formNote.textContent = 'Thanks for reaching out — this form is a placeholder until email delivery is connected.';
+    form.reset();
+  });
+}
