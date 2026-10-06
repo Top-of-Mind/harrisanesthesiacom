@@ -16,9 +16,27 @@ siteNav.querySelectorAll('a').forEach((link) => {
 const form = document.getElementById('contact-form');
 if (form) {
   const formNote = document.getElementById('form-note');
-  form.addEventListener('submit', (e) => {
+  const submitBtn = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    formNote.textContent = 'Thanks for reaching out — this form is a placeholder until email delivery is connected.';
-    form.reset();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    formNote.textContent = '';
+    try {
+      const res = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      const result = await res.json();
+      if (!res.ok || String(result.success) !== 'true') throw new Error(result.message);
+      formNote.textContent = "Thanks — we've received your message and will be in touch shortly.";
+      form.reset();
+    } catch {
+      formNote.textContent = "Sorry, that didn't go through. Please email info@harrisanesthesia.com or call (650) 705-9152.";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }
   });
 }

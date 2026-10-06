@@ -496,6 +496,8 @@ a.service-card { display: flex; flex-direction: column; color: inherit; }
 }
 .form-row { margin-bottom: 18px; display: flex; flex-direction: column; gap: 6px; }
 .form-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.form-honeypot { position: absolute; left: -9999px; }
+.contact-form button:disabled { opacity: 0.6; cursor: wait; }
 .form-row label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
 .form-row input, .form-row select, .form-row textarea {
   font-family: var(--font-body);
