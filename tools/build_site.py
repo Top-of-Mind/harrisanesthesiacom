@@ -60,7 +60,7 @@ WHY_POINTS = [
     "Accountable to the same dental board as your practice",
     "Stays with your patient until discharge criteria are met",
     "Brings his own anesthesia, monitoring, and emergency equipment",
-    "One flat fee per case, billed directly to your practice",
+    "Flat per-case or time-based fees, billed directly to your practice",
     "Mobile dental anesthesia is his full-time practice",
 ]
 
@@ -238,7 +238,7 @@ FAQ = [
     ("Where does Dr. Harris work?",
      "Anywhere in the Texas Triangle &mdash; Austin, San Antonio, Houston, Dallas, and the surrounding communities. He comes to your office; your patients never leave your practice."),
     ("How is anesthesia billed?",
-     f"One flat fee per case, billed directly to your practice &mdash; there&rsquo;s no separate patient billing for your team to manage. <a href=\"{RATE_SHEET}\">Email us for our current rate sheet.</a>"),
+     f"Your choice of one flat fee per case or time-based pricing, billed directly to your practice &mdash; there&rsquo;s no separate patient billing for your team to manage. <a href=\"{RATE_SHEET}\">Email us for our current rate sheet.</a>"),
     ("Do we need to buy anesthesia equipment?",
      "Dr. Harris brings his own anesthesia, monitoring, and emergency equipment to every case, so your practice doesn&rsquo;t need to purchase or maintain it."),
     ("What kinds of practices do you work with?",
@@ -260,7 +260,7 @@ faq_html = "\n".join(
 
 home = head(
     "Mobile Dental Anesthesiologist in Texas | Harris Anesthesia Group",
-    "Dr. Brett Harris brings office-based general anesthesia to dental practices in Austin, Houston, Dallas &amp; San Antonio. One flat fee per case.",
+    "Dr. Brett Harris brings office-based general anesthesia to dental practices in Austin, Houston, Dallas &amp; San Antonio. Flat-fee or time-based pricing.",
     "/",
     ld_script,
 ) + f"""
@@ -272,8 +272,8 @@ home = head(
       <h1>Mobile Dental Anesthesiologist for Texas Practices</h1>
       <p class="hero-lede">
         General anesthesia in your office, delivered by Dr. Brett Harris &mdash; for pediatric,
-        surgical, periodontal, implant, and general dentistry. One flat fee per case, no
-        anesthesiologist on staff required.
+        surgical, periodontal, implant, and general dentistry. Flat per-case or time-based
+        pricing, no anesthesiologist on staff required.
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Book Dr. Harris</a>
@@ -293,8 +293,8 @@ home = head(
         <span class="stat-label">Hospital-based residency in dental anesthesiology</span>
       </div>
       <div class="stat">
-        <span class="stat-num">Flat Fee</span>
-        <span class="stat-label">Per case, billed to your practice</span>
+        <span class="stat-num">Flexible Fees</span>
+        <span class="stat-label">Flat per case or time-based, billed to your practice</span>
       </div>
       <div class="stat">
         <span class="stat-num">TX Triangle</span>
@@ -350,8 +350,8 @@ home = head(
           <p>We travel to your operatory anywhere in the Texas Triangle &mdash; Austin, San Antonio, Houston, and Dallas.</p>
         </div>
         <div class="referring-point">
-          <h3>Flat, Predictable Per-Case Fee</h3>
-          <p>One flat fee billed directly to your practice per case &mdash; no separate patient billing to manage.</p>
+          <h3>Flat-Fee or Time-Based Pricing</h3>
+          <p>Choose one flat fee per case or time-based pricing, billed directly to your practice &mdash; no separate patient billing to manage.</p>
         </div>
       </div>
 
@@ -693,7 +693,7 @@ CITY_COPY = {
         "gonzalez",
         """      <h2>Office-Based Anesthesia for San Antonio Dental Practices</h2>
       <p>Keep general anesthesia cases in your San Antonio office instead of referring them out. Dr. Harris brings everything needed for office-based general anesthesia &mdash; anesthesia, monitoring, and emergency equipment &mdash; to your operatory.</p>
-      <p>Your practice pays one flat fee per case, with no anesthesia team to hire or credential, and Dr. Harris stays with every patient until discharge criteria are met.</p>""",
+      <p>Your practice pays one flat fee per case or chooses time-based pricing, with no anesthesia team to hire or credential, and Dr. Harris stays with every patient until discharge criteria are met.</p>""",
     ),
 }
 
@@ -710,7 +710,7 @@ for slug, name in CITIES:
     page(
         f"/{slug}/",
         f"Dental Anesthesiologist in {name}, TX | Harris Anesthesia",
-        f"Mobile dental anesthesiologist Dr. Brett Harris brings general anesthesia to dental offices in {name}, TX. One flat fee per case.",
+        f"Mobile dental anesthesiologist Dr. Brett Harris brings general anesthesia to dental offices in {name}, TX. Flat-fee or time-based pricing.",
         f"{name}, Texas",
         f"Mobile Dental Anesthesiologist in {name}, TX",
         f"General anesthesia in your {name} office, delivered by a dedicated dental anesthesiologist &mdash; no anesthesiologist on staff required.",
@@ -798,7 +798,7 @@ for slug, name in SERVICES:
     page(
         f"/{slug}/",
         f"{seo_title} | Harris Anesthesia",
-        f"{seo_lead} Serving Austin, Houston, Dallas &amp; San Antonio. One flat fee per case.",
+        f"{seo_lead} Serving Austin, Houston, Dallas &amp; San Antonio. Flat-fee or time-based pricing.",
         "Services",
         h1,
         lede,
